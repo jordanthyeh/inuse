@@ -4,79 +4,87 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>免問 InUse — 隱私權政策</title>
-
-  <style>
-    :root { --navy:#263671; --green:#2FB35E; --ink:#1A1A2E; --paper:#FAF8F3; }
-    * { box-sizing:border-box; }
-    body { margin:0; font-family:-apple-system,"PingFang TC","Noto Sans TC",sans-serif;
-           background:var(--paper); color:var(--ink); line-height:1.8; }
-    header { background:var(--navy); color:#fff; padding:48px 24px 40px; text-align:center; }
-    header h1 { margin:0 0 6px; font-size:28px; letter-spacing:2px; }
-    header p { margin:0; opacity:.85; font-size:15px; }
-    main { max-width:720px; margin:0 auto; padding:32px 24px 64px; }
-    h2 { font-size:19px; margin:36px 0 10px; color:var(--navy);
-         border-left:4px solid var(--green); padding-left:10px; }
-    p, li { font-size:15.5px; }
-    ul { padding-left:22px; }
-    a { color:var(--navy); }
-    .muted { color:#666; font-size:13.5px; }
-    footer { text-align:center; padding:24px; color:#888; font-size:13px; }
-    .btnrow { text-align:center; margin-top:20px; }
-    .btn { display:inline-block; background:var(--green); color:#fff; text-decoration:none;
-           padding:10px 22px; border-radius:12px; font-weight:700; }
-  </style>
-
+<style>
+  body { font-family: -apple-system, "PingFang TC", "Noto Sans TC", sans-serif;
+         max-width: 720px; margin: 0 auto; padding: 32px 20px 64px;
+         color: #1c2330; line-height: 1.75; }
+  h1 { font-size: 1.6em; margin-bottom: 0; }
+  .sub { color: #666; margin-top: 4px; }
+  h2 { font-size: 1.15em; margin-top: 2em; border-left: 4px solid #263671;
+       padding-left: 10px; }
+  ul { padding-left: 1.3em; }
+  li { margin: 6px 0; }
+  .foot { margin-top: 3em; color: #888; font-size: .9em; }
+  a { color: #263671; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #12151c; color: #e8eaf0; }
+    h2 { border-left-color: #7f95ff; }
+    .sub, .foot { color: #9aa1b0; }
+    a { color: #9db1ff; }
+  }
+</style>
 </head>
 <body>
-<header>
-  <h1>免問 InUse</h1>
-  <p>隱私權政策 Privacy Policy</p>
-</header>
-<main>
-  <p class="muted">生效日期：2026 年 9 月 4 日</p>
-  <p>「免問」（英文名 InUse，以下稱本 App）由開發者 Jordan 開發與維護。我們深知狀態資訊屬於你和你的群組，本政策說明我們蒐集什麼、如何使用，以及你擁有的控制權。</p>
 
-  <h2>我們蒐集的資料</h2>
-  <ul>
-    <li><b>帳號資料（選擇性）</b>：你可以選擇以 Email 綁定帳號用於跨裝置找回資料；未綁定時以匿名帳號使用。</li>
-    <li><b>個人化資料</b>：你自行設定的暱稱與頭像（表情符號）。</li>
-    <li><b>使用內容</b>：你建立的群組、子情境、狀態、投票回覆與留言。</li>
-  </ul>
-  <p>我們<b>不會</b>蒐集你的通訊錄、精確位置、照片或任何裝置檔案；本 App 亦無廣告與第三方追蹤。</p>
+<h1>免問 InUse</h1>
+<p class="sub">隱私權政策 Privacy Policy<br>生效日期:2026 年 9 月 8 日</p>
 
-  <h2>資料如何使用</h2>
-  <ul>
-    <li>提供核心功能：將你的狀態即時同步給<b>你所加入群組的成員</b>（僅限同群組成員可見）。</li>
-    <li>帳號綁定者：用於跨裝置登入與資料找回。</li>
-  </ul>
-  <p>我們不出售、不出租你的資料，也不將資料用於廣告或行銷。</p>
+<p>「免問」(英文名 InUse,以下稱本 App)由開發者 Jordan 開發與維護。我們深知狀態資訊屬於你和你的群組,本政策說明我們蒐集什麼、如何使用,以及你擁有的控制權。</p>
 
-  <h2>資料儲存與保護</h2>
-  <ul>
-    <li>資料儲存於 Supabase 雲端資料庫，傳輸全程以 HTTPS 加密。</li>
-    <li>資料庫設有列級安全規則（Row Level Security），僅同群組成員可讀取彼此的狀態內容。</li>
-    <li>狀態與留言具時效性，到期後即不再顯示。</li>
-  </ul>
+<h2>我們蒐集的資料</h2>
+<ul>
+  <li><strong>帳號資料(選擇性)</strong>:你可以選擇以 Email 綁定帳號用於跨裝置找回資料;未綁定時以匿名帳號使用。</li>
+  <li><strong>個人化資料</strong>:你自行設定的暱稱與頭像(表情符號)。</li>
+  <li><strong>使用內容</strong>:你建立的群組、子情境、狀態、投票回覆與留言。</li>
+</ul>
+<p>我們<strong>不會</strong>蒐集你的通訊錄、照片或任何裝置檔案;本 App 亦無廣告與第三方追蹤。</p>
 
-  <h2>第三方服務</h2>
-  <p>本 App 使用以下基礎服務，其僅為提供功能所必需：</p>
-  <ul>
-    <li><b>Supabase</b>：資料庫與帳號驗證。</li>
-    <li><b>Expo （EAS）</b>：App 發佈與更新。</li>
-  </ul>
+<h2>位置資訊(選用功能,只留在你的裝置)</h2>
+<p>「📍 自動報備」為<strong>選用</strong>功能,使用作業系統原生的地理圍籬(geofencing)技術,在你進出自訂地點(例如家、公司)時自動發送你預先設定的狀態卡片。</p>
+<ul>
+  <li>你自訂的地點座標<strong>僅儲存於你的裝置本機</strong>,<strong>絕不會上傳或儲存至我們的伺服器</strong>。</li>
+  <li>觸發時,伺服器只會收到你預先設定的狀態文字(例如「🏠 到家了」)——與你手動按下該卡片完全相同,不含任何座標。</li>
+  <li>你可以選擇「先詢問再發送」模式,或隨時在 App 內關閉此功能、收回定位權限。</li>
+</ul>
 
-  <h2>你的權利：刪除帳號與資料</h2>
-  <p>你可以隨時在 App 內完成刪除：<b>👤 帳號 → 刪除我的帳號</b>。此操作會永久刪除你的帳號、所有狀態紀錄、留言、自訂卡片，以及你所建立的群組，無法復原，無需透過任何人工審核。</p>
+<h2>Apple Watch</h2>
+<p>若你使用 Apple Watch 版本,登入憑證會透過 Apple 的裝置間加密通道(WatchConnectivity)同步至你配對的手錶,讓手錶可直接連線服務;此憑證僅儲存於你的手錶裝置,不會經過第三方。</p>
 
-  <h2>兒童隱私</h2>
-  <p>本 App 不以未滿 13 歲兒童為對象，也不會刻意蒐集其個人資料。</p>
+<h2>資料如何使用</h2>
+<ul>
+  <li>提供核心功能:將你的狀態即時同步給<strong>你所加入群組的成員</strong>(僅限同群組成員可見)。</li>
+  <li>帳號綁定者:用於跨裝置登入與資料找回。</li>
+</ul>
+<p>我們不出售、不出租你的資料,也不將資料用於廣告或行銷。</p>
 
-  <h2>政策變更</h2>
-  <p>政策如有重大變更，我們會更新本頁並調整生效日期。</p>
+<h2>資料儲存與保護</h2>
+<ul>
+  <li>資料儲存於 Supabase 雲端資料庫,傳輸全程以 HTTPS 加密。</li>
+  <li>資料庫設有列級安全規則(Row Level Security),僅同群組成員可讀取彼此的狀態內容。</li>
+  <li>狀態與留言具時效性,到期後即不再顯示。</li>
+</ul>
 
-  <h2>聯絡我們</h2>
-  <p>任何隱私相關問題，歡迎來信：<a href="mailto:inuse9993@gmail.com">inuse9993@gmail.com</a></p>
-</main>
-<footer>© 2026 免問 InUse</footer>
+<h2>第三方服務</h2>
+<p>本 App 使用以下基礎服務,其僅為提供功能所必需:</p>
+<ul>
+  <li><strong>Supabase</strong>:資料庫與帳號驗證。</li>
+  <li><strong>Expo (EAS)</strong>:App 發佈、更新與推播通知遞送(iOS 經由 Apple APNs)。</li>
+  <li><strong>Firebase Cloud Messaging</strong>:Android 推播通知遞送。</li>
+</ul>
+
+<h2>你的權利:刪除帳號與資料</h2>
+<p>你可以隨時在 App 內完成刪除:<strong>👤 帳號 → 刪除我的帳號</strong>。此操作會永久刪除你的帳號、所有狀態紀錄、留言、自訂卡片,以及你所建立的群組,無法復原,無需透過任何人工審核。</p>
+
+<h2>兒童隱私</h2>
+<p>本 App 不以未滿 13 歲兒童為對象,也不會刻意蒐集其個人資料。</p>
+
+<h2>政策變更</h2>
+<p>政策如有重大變更,我們會更新本頁並調整生效日期。</p>
+
+<h2>聯絡我們</h2>
+<p>任何隱私相關問題,歡迎來信:<a href="mailto:inuse9993@gmail.com">inuse9993@gmail.com</a></p>
+
+<p class="foot">© 2026 免問 InUse</p>
+
 </body>
 </html>
