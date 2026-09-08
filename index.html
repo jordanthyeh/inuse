@@ -4,94 +4,101 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>免問 InUse — 誰在用，一看就知道</title>
-
-  <style>
-    :root { --navy:#263671; --green:#2FB35E; --ink:#1A1A2E; --paper:#FAF8F3; }
-    * { box-sizing:border-box; }
-    body { margin:0; font-family:-apple-system,"PingFang TC","Noto Sans TC",sans-serif;
-           background:var(--paper); color:var(--ink); line-height:1.8; }
-    header { background:var(--navy); color:#fff; padding:56px 24px 48px; text-align:center; }
-    header h1 { margin:0 0 8px; font-size:32px; letter-spacing:3px; }
-    header .tag { margin:0; opacity:.9; font-size:16px; }
-    header .sub { margin:10px 0 0; opacity:.65; font-size:13.5px; }
-    main { max-width:760px; margin:0 auto; padding:36px 24px 64px; }
-    h2 { font-size:20px; margin:40px 0 14px; color:var(--navy);
-         border-left:4px solid var(--green); padding-left:10px; }
-    p, li { font-size:15.5px; }
-    ul { padding-left:22px; }
-    a { color:var(--navy); }
-    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin-top:14px; }
-    .card { background:#fff; border:1px solid #E8E4DB; border-radius:16px; padding:16px 18px; }
-    .card b { display:block; font-size:15.5px; margin-bottom:4px; }
-    .card span { font-size:14px; color:#555; line-height:1.7; }
-    .steps { counter-reset:s; list-style:none; padding:0; }
-    .steps li { counter-increment:s; margin:10px 0; padding-left:44px; position:relative; }
-    .steps li::before { content:counter(s); position:absolute; left:0; top:2px;
-      width:30px; height:30px; border-radius:50%; background:var(--green); color:#fff;
-      font-weight:700; display:flex; align-items:center; justify-content:center; }
-    .faq b { color:var(--navy); }
-    .btnrow { text-align:center; margin-top:28px; }
-    .btn { display:inline-block; background:var(--green); color:#fff; text-decoration:none;
-           padding:11px 24px; border-radius:12px; font-weight:700; }
-    footer { text-align:center; padding:24px; color:#888; font-size:13px; }
-  </style>
-
+<style>
+  body { font-family: -apple-system, "PingFang TC", "Noto Sans TC", sans-serif;
+         max-width: 720px; margin: 0 auto; padding: 32px 20px 64px;
+         color: #1c2330; line-height: 1.8; }
+  h1 { font-size: 1.8em; margin-bottom: 0; }
+  .sub { color: #555; margin-top: 6px; font-size: 1.05em; }
+  .sub2 { color: #888; margin-top: 2px; }
+  h2 { font-size: 1.2em; margin-top: 2.2em; border-left: 4px solid #263671;
+       padding-left: 10px; }
+  ul { padding-left: 1.3em; }
+  li { margin: 7px 0; }
+  .feat { margin: 14px 0; }
+  .feat b { display: block; }
+  .new { display: inline-block; background: #263671; color: #fff;
+         font-size: .72em; border-radius: 6px; padding: 1px 7px;
+         vertical-align: 2px; margin-left: 4px; }
+  .qa b { display: block; margin-top: 14px; }
+  .foot { margin-top: 3em; color: #888; font-size: .9em; }
+  a { color: #263671; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #12151c; color: #e8eaf0; }
+    h2 { border-left-color: #7f95ff; }
+    .sub { color: #b9c0cf; } .sub2, .foot { color: #9aa1b0; }
+    .new { background: #5b74e8; }
+    a { color: #9db1ff; }
+  }
+</style>
 </head>
 <body>
-<header>
-  <h1>免問 <span style="font-size:18px;opacity:.7">InUse</span></h1>
-  <p class="tag">洗衣機、浴室、車位——誰在用，免問</p>
-  <p class="sub">不用開口問、不用等回覆的即時狀態看板</p>
-</header>
-<main>
 
-  <h2>為什麼需要「免問」？</h2>
-  <p>「洗衣機好了沒？」「浴室有人嗎？」「車位還在嗎？」「到家了沒？」「今晚吃不吃？」——同一群人，每天重複問同樣的問題。</p>
-  <p>「免問」把這些問答變成<b>一顆按鈕</b>：每個人隨手更新自己的狀態，群組成員打開看一眼就知道。不用打字、不欠回覆、沒有已讀壓力。</p>
+<h1>免問 InUse</h1>
+<p class="sub">洗衣機、浴室、車位——誰在用，免問</p>
+<p class="sub2">不用開口問、不用等回覆的即時狀態看板</p>
 
-  <h2>功能一覽</h2>
-  <div class="grid">
-    <div class="card"><b>⚡ 一鍵狀態</b><span>下班了、到家了、洗衣機使用中——點一下就更新，全群組即時看到。</span></div>
-    <div class="card"><b>⏱ 自動過期</b><span>狀態可設定結束時間，時間到自動下架，版面永遠乾淨。</span></div>
-    <div class="card"><b>🙋 一鍵投票</b><span>「要吃晚餐嗎？」選日期、按 ⭕ 或 ❌，誰要誰不要自動統計，還能設定統計截止時間。</span></div>
-    <div class="card"><b>💬 便利貼留言</b><span>對某人的動態或某場投票補一句（留雞腿！不吃香菜！），留言跟著狀態一起過期，不留包袱。</span></div>
-    <div class="card"><b>👌 收到回應</b><span>看到對方動態按個「收到」，對方就安心了——比已讀更有溫度。</span></div>
-    <div class="card"><b>🧩 自由客製</b><span>自訂狀態卡片、隱藏用不到的頁籤、拖曳排序；你的個人化不影響其他成員。</span></div>
-    <div class="card"><b>🔒 私密子情境</b><span>需要小圈圈？上鎖的子情境要頻道碼才進得來。</span></div>
-    <div class="card"><b>🌙 深色模式</b><span>淺色深色隨你，夜貓子友善。</span></div>
-  </div>
+<h2>為什麼需要「免問」？</h2>
+<p>「洗衣機好了沒？」「浴室有人嗎？」「車位還在嗎？」「到家了沒？」「今晚吃不吃？」——同一群人，每天重複問同樣的問題。</p>
+<p>「免問」把這些問答變成<strong>一顆按鈕</strong>：每個人隨手更新自己的狀態，群組成員打開看一眼就知道。不用打字、不欠回覆、沒有已讀壓力。</p>
 
-  <h2>適合誰？</h2>
-  <ul>
-    <li><b>租屋族、宿舍</b>：洗衣機、浴室、公共空間，誰在用一目瞭然，搶輸不再吵架。</li>
-    <li><b>家庭</b>：下班、到家、接送、晚餐報備，爸媽安心，小孩免煩。</li>
-    <li><b>情侶</b>：在忙、在路上、想你了——一顆按鈕的默契。</li>
-    <li><b>朋友、牌咖</b>：揪打球、開桌打牌、線上一起玩，誰+1一目瞭然，缺人自動揪。</li>
-    <li><b>同事</b>：午餐揪團、會議中勿擾、車位狀態，辦公室的無聲協作。</li>
-  </ul>
+<h2>功能一覽</h2>
+<div class="feat"><b>⚡ 一鍵狀態</b>下班了、到家了、洗衣機使用中——點一下就更新，全群組即時看到。</div>
+<div class="feat"><b>📍 自動報備<span class="new">NEW</span></b>進出家裡、公司、學校等自訂地點，自動幫你按卡；可選「先詢問再發送」，快到家還能提前預告。位置只存在你的手機，絕不上傳。</div>
+<div class="feat"><b>⌚ Apple Watch<span class="new">NEW</span></b>手錶上一鍵送出狀態、查看成員動態，手機不在身邊也能用。</div>
+<div class="feat"><b>🧿 桌面與鎖定畫面小工具<span class="new">NEW</span></b>把常用卡片釘在桌面或鎖定畫面，一點就發，連 App 都不用開。</div>
+<div class="feat"><b>🔔 鎖定畫面快捷<span class="new">NEW</span></b>統計通知直接按 ⭕❌ 投票、動態通知直接打字回覆，長按通知就能操作。</div>
+<div class="feat"><b>🔖 預約時段<span class="new">NEW</span></b>先卡位晚上 7：30～9：30 用車位，時間到自動轉成「使用中」並顯示剩餘時間。</div>
+<div class="feat"><b>📣 資源空出通知<span class="new">NEW</span></b>洗衣機、浴室、車位等共用資源一空出來，自動通知想用的人。</div>
+<div class="feat"><b>⏱ 自動過期</b>狀態可設定結束時間，時間到自動下架，版面永遠乾淨。</div>
+<div class="feat"><b>🙋 一鍵投票</b>「要吃晚餐嗎？」選日期、按 ⭕ 或 ❌，誰要誰不要自動統計，還能設定截止時間。</div>
+<div class="feat"><b>💬 便利貼留言</b>對某人的動態或某場投票補一句（留雞腿！不吃香菜！），留言跟著狀態一起過期，不留包袱。</div>
+<div class="feat"><b>👌 收到回應</b>看到對方動態按個「收到」，對方就安心了——比已讀更有溫度。</div>
+<div class="feat"><b>🧩 自由客製</b>自訂狀態卡片、隱藏用不到的頁籤、拖曳排序；你的個人化不影響其他成員。</div>
+<div class="feat"><b>🔒 私密子情境</b>需要小圈圈？上鎖的子情境要頻道碼才進得來；自動報備也能只發給特定人。</div>
+<div class="feat"><b>📱 iPad 支援</b>大螢幕多欄排版，平板閱讀體驗最佳化。</div>
+<div class="feat"><b>🌙 深色模式</b>淺色深色隨你，夜貓子友善。</div>
 
-  <h2>三步開始</h2>
-  <ol class="steps">
-    <li>下載「免問」，取個暱稱（不用註冊也能玩）。</li>
-    <li>建立群組，把 6 碼邀請碼丟給家人室友。</li>
-    <li>各自按下第一顆狀態——從此免問。</li>
-  </ol>
+<h2>適合誰？</h2>
+<ul>
+  <li><strong>租屋族、宿舍</strong>：洗衣機、浴室、公共空間，誰在用一目瞭然，搶輸不再吵架。</li>
+  <li><strong>家庭</strong>：下班、到家、接送、晚餐報備，爸媽安心，小孩免煩；自動報備讓報平安零負擔。</li>
+  <li><strong>情侶</strong>：在忙、在路上、想你了——一顆按鈕的默契。</li>
+  <li><strong>朋友、牌咖</strong>：揪打球、開桌打牌、線上一起玩，誰+1一目瞭然，缺人自動揪。</li>
+  <li><strong>同事</strong>：午餐揪團、會議中勿擾、車位狀態，辦公室的無聲協作。</li>
+</ul>
 
-  <h2>常見問題</h2>
-  <div class="faq">
-    <p><b>Q：需要註冊帳號嗎？</b><br>不用，打開就能玩。想跨裝置保存資料時，再到 👤 綁定 Email 即可。</p>
-    <p><b>Q：我的狀態誰看得到？</b><br>只有和你在同一個群組的成員。群組靠 6 碼邀請碼加入，沒有公開瀏覽。</p>
-    <p><b>Q：換手機資料還在嗎？</b><br>有綁定 Email 就在——新手機登入即可完整找回群組與紀錄。</p>
-    <p><b>Q：可以刪除帳號嗎？</b><br>可以，App 內 👤 → 刪除我的帳號，所有資料永久刪除，不用寫信申請。</p>
-    <p><b>Q：免費嗎？</b><br>核心功能免費。未來的進階自動化功能（例如地理位置自動更新狀態）可能採訂閱制。</p>
-    <p><b>Q：有 Android 版嗎？</b><br>開發中，敬請期待。</p>
-  </div>
+<h2>三步開始</h2>
+<ol>
+  <li>下載「免問」，取個暱稱（不用註冊也能玩）。</li>
+  <li>建立群組，把 6 碼邀請碼丟給家人室友。</li>
+  <li>各自按下第一顆狀態——從此免問。</li>
+</ol>
 
-  <h2>聯絡與回饋</h2>
-  <p>問題回報、功能許願，來信：<a href="mailto:inuse9993@gmail.com">inuse9993@gmail.com</a>，我們真的會看、真的會回。</p>
+<h2>常見問題</h2>
+<div class="qa">
+  <b>Q：需要註冊帳號嗎？</b>
+  不用，打開就能玩。想跨裝置保存資料時，再到 👤 綁定 Email 即可。
+  <b>Q：我的狀態誰看得到？</b>
+  只有和你在同一個群組的成員。群組靠 6 碼邀請碼加入，沒有公開瀏覽。
+  <b>Q：自動報備會追蹤我的位置嗎？</b>
+  不會。地點座標只存在你的手機，判斷進出也在手機上完成；伺服器只會收到你預先設定的狀態文字，和手動按卡完全一樣。功能完全選用，隨時可關。
+  <b>Q：換手機資料還在嗎？</b>
+  有綁定 Email 就在——新手機登入即可完整找回群組與紀錄。
+  <b>Q：可以刪除帳號嗎？</b>
+  可以，App 內 👤 → 刪除我的帳號，所有資料永久刪除，不用寫信申請。
+  <b>Q：免費嗎？</b>
+  目前所有功能免費。未來若推出進階功能可能採訂閱制，現有核心功能將維持免費。
+  <b>Q：有 Android 版嗎？</b>
+  Beta 測試中——來信索取測試版安裝連結，正式版籌備中。
+</div>
 
-  <div class="btnrow"><a class="btn" href="./privacy.html">隱私權政策</a></div>
-</main>
-<footer>© 2026 免問 InUse · Made in Taiwan 🇹🇼</footer>
+<h2>聯絡與回饋</h2>
+<p>問題回報、功能許願，來信：<a href="mailto:inuse9993@gmail.com">inuse9993@gmail.com</a>，我們真的會看、真的會回。</p>
+
+<p><a href="https://jordanthyeh.github.io/inuse/privacy.html">隱私權政策</a></p>
+
+<p class="foot">© 2026 免問 InUse · Made in Taiwan 🇹🇼</p>
+
 </body>
 </html>
